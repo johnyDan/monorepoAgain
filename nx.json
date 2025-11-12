@@ -1,0 +1,22 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "typecheck"]
+      }
+    }
+  },
+  "defaultBase": "main",
+  "targetDefaults": {
+    "build": { "cache": true },
+    "test": { "cache": true },
+    "lint": { "cache": true },
+    "typecheck": { "cache": true }
+  },
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "packages"
+  }
+}
