@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "name": "MobileHost",
+    "slug": "mobile-host",
+    "version": "0.0.1",
+    "platforms": ["android", "ios"],
+    "orientation": "portrait",
+    "assetBundlePatterns": ["**/*"],
+    "ios": { "supportsTablet": true },
+    "android": { "package": "com.example.mobilehost" }
+  }
+}
