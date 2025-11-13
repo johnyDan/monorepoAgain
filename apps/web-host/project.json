@@ -1,0 +1,13 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "web-host",
+  "root": "apps/web-host",
+  "targets": {
+    "dev": { "executor": "nx:run-commands", "options": { "command": "pnpm -C apps/web-host dev" } },
+    "build": { "executor": "nx:run-commands", "options": { "command": "pnpm -C apps/web-host build" } },
+    "preview": { "executor": "nx:run-commands", "options": { "command": "pnpm -C apps/web-host preview" } },
+    "typecheck": { "executor": "nx:run-commands", "options": { "command": "pnpm -C apps/web-host typecheck" } },
+    "lint": { "executor": "nx:run-commands", "options": { "command": "pnpm -C apps/web-host lint" } }
+  },
+  "implicitDependencies": ["design-system", "platform-core"]
+}
