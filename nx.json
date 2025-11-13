@@ -10,10 +10,22 @@
   },
   "defaultBase": "main",
   "targetDefaults": {
-    "build": { "cache": true },
+    "build": {
+      "cache": true,
+      "dependsOn": ["^build"]
+    },
+    "typecheck": {
+      "cache": true,
+      "dependsOn": ["^build"]
+    },
+    "dev:web": {
+      "dependsOn": ["^build"]
+    },
+    "dev:native": {
+      "dependsOn": ["^build"]
+    },
     "test": { "cache": true },
-    "lint": { "cache": true },
-    "typecheck": { "cache": true }
+    "lint": { "cache": true }
   },
   "workspaceLayout": {
     "appsDir": "apps",
