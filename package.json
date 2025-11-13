@@ -5,12 +5,16 @@
   "packageManager": "pnpm@10.14.0",
   "scripts": {
     "nx": "nx",
-  "graph": "nx graph",
+    "graph": "nx graph",
     "format": "nx run-many -t format --all",
     "lint": "nx run-many -t lint --all",
     "typecheck": "nx run-many -t typecheck --all",
     "test": "nx run-many -t test --all",
-    "build": "nx run-many -t build --all"
+    "build": "nx run-many -t build --all",
+    "typecheck:hosts": "nx run-many -t typecheck --projects=web-host,mobile-host",
+    "lint:hosts": "nx run-many -t lint --projects=web-host,mobile-host",
+    "dev:web": "nx run web-host:dev",
+    "dev:mobile": "nx run mobile-host:dev-sdk"
   },
   "devDependencies": {
     "nx": "^20.0.0",
