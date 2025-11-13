@@ -15,7 +15,7 @@
     "paths": {
       "@platform-core/*": ["packages/platform-core/src/*"],
       "@design-system/*": ["packages/design-system/src/*"],
-      "@features/*": ["features/*/src/*"]
+      "@features/*": ["features/*/src"]
     }
   }
 }

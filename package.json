@@ -2,10 +2,10 @@
   "name": "@workspace/root",
   "private": true,
   "version": "0.0.0",
-  "packageManager": "pnpm@9",
+  "packageManager": "pnpm@10.14.0",
   "scripts": {
     "nx": "nx",
-    "graph": "nx graph",
+  "graph": "nx graph",
     "format": "nx run-many -t format --all",
     "lint": "nx run-many -t lint --all",
     "typecheck": "nx run-many -t typecheck --all",
@@ -19,6 +19,8 @@
     "@typescript-eslint/eslint-plugin": "^8.11.0",
     "@typescript-eslint/parser": "^8.11.0",
     "prettier": "^3.3.3",
-    "eslint-config-prettier": "^9.1.0"
+    "eslint-config-prettier": "^9.1.0",
+    "vitest": "^1.6.0",
+    "@types/node": "^20.12.12"
   }
 }

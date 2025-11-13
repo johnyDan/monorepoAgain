@@ -1,0 +1,27 @@
+{
+  "name": "@platform-core",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint . --ext .ts,.tsx",
+    "test": "vitest --root ./"
+  },
+  "dependencies": {
+    "zustand": "^4.5.5"
+  },
+  "peerDependencies": {
+    "zustand": ">=4.4.0"
+  }
+}
