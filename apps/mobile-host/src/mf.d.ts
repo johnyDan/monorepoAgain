@@ -1,0 +1,1 @@
+declare module 'wire_transfers/native';

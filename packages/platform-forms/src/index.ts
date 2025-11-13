@@ -1,0 +1,1 @@
+export { makePlatformCoreResolver, type Schema, type FieldValidator, v } from './rhf/resolver';

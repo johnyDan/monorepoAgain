@@ -1,0 +1,13 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "wire-transfers",
+  "root": "features/wire-transfers",
+  "targets": {
+    "dev:web": { "executor": "nx:run-commands", "options": { "command": "pnpm -C features/wire-transfers dev:web" } },
+    "build:web": { "executor": "nx:run-commands", "options": { "command": "pnpm -C features/wire-transfers build:web" } },
+    "dev:native": { "executor": "nx:run-commands", "options": { "command": "pnpm -C features/wire-transfers dev:native" } },
+    "typecheck": { "executor": "nx:run-commands", "options": { "command": "pnpm -C features/wire-transfers typecheck" } },
+    "lint": { "executor": "nx:run-commands", "options": { "command": "pnpm -C features/wire-transfers lint" } }
+  },
+  "implicitDependencies": ["design-system", "platform-core", "platform-forms"]
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "platform-forms",
+  "root": "packages/platform-forms",
+  "targets": {
+    "build": { "executor": "nx:run-commands", "options": { "command": "pnpm -C packages/platform-forms build" } },
+    "typecheck": { "executor": "nx:run-commands", "options": { "command": "pnpm -C packages/platform-forms typecheck" } },
+    "lint": { "executor": "nx:run-commands", "options": { "command": "pnpm -C packages/platform-forms lint" } },
+    "test": { "executor": "nx:run-commands", "options": { "command": "pnpm -C packages/platform-forms test" } }
+  }
+}

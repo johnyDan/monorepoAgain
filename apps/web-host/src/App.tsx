@@ -1,14 +1,12 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { ThemeProvider, CssBaseline, Container, Box } from '@mui/material';
 import { muiTheme } from '@design-system/web/theme';
 
+const WireTransfersRemote = React.lazy(() => import('wire_transfers/App'));
+
 function Home() {
   return <Box>Web Host Home (feature mount point coming soon)</Box>;
-}
-
-function WireTransfersPlaceholder() {
-  return <Box>Wire Transfers feature placeholder (Milestone 4)</Box>;
 }
 
 export default function App() {
@@ -22,7 +20,14 @@ export default function App() {
         </Box>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/wire-transfers" element={<WireTransfersPlaceholder />} />
+          <Route
+            path="/wire-transfers"
+            element={
+              <Suspense fallback={<Box>Loading wire transfers...</Box>}>
+                <WireTransfersRemote />
+              </Suspense>
+            }
+          />
         </Routes>
       </Container>
     </ThemeProvider>

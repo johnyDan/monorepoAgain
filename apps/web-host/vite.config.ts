@@ -9,7 +9,7 @@ export default defineConfig(() => ({
     ...federation({
       name: 'web_host',
       remotes: {
-        // wire_transfers: process.env.WIRE_TRANSFERS_REMOTE || 'http://localhost:4301/assets/remoteEntry.js'
+       wire_transfers: process.env.WIRE_TRANSFERS_REMOTE || 'http://localhost:4301/assets/remoteEntry.js'
       },
       shared: {
         react: { singleton: true, eager: true },
