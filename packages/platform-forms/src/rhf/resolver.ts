@@ -31,12 +31,16 @@ export function makePlatformCoreResolver<TFieldValues extends FieldValues>(
 
 export const v = {
   required: (message?: string): FieldValidator => (val) => required(val, message),
-  minAmount: (min?: number, message?: string): FieldValidator => (val) =>
-    typeof val === 'number'
-      ? (minAmount(val, min ?? 0.01, message) as true | string)
-      : 'Invalid number',
-  maxAmount: (max?: number, message?: string): FieldValidator => (val) =>
-    typeof val === 'number'
-      ? (maxAmount(val, max ?? 100000, message) as true | string)
-      : 'Invalid number'
+  minAmount: (min?: number, message?: string): FieldValidator => (val) => {
+    if (val === null || val === undefined || val === '') return 'Amount is required';
+    const num = typeof val === 'string' ? parseFloat(val) : (typeof val === 'number' ? val : NaN);
+    if (isNaN(num)) return 'Invalid number';
+    return minAmount(num, min ?? 0.01, message) as true | string;
+  },
+  maxAmount: (max?: number, message?: string): FieldValidator => (val) => {
+    if (val === null || val === undefined || val === '') return true; // Skip if empty
+    const num = typeof val === 'string' ? parseFloat(val) : (typeof val === 'number' ? val : NaN);
+    if (isNaN(num)) return 'Invalid number';
+    return maxAmount(num, max ?? 100000, message) as true | string;
+  }
 };

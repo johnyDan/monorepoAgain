@@ -48,3 +48,16 @@ Nx is configured to automatically build dependencies before running targets:
 2. `platform-forms` (depends on platform-core)
 3. `wire-transfers` (depends on platform-core, platform-forms, design-system)
 4. `web-host` (depends on design-system, platform-core)
+
+## Development Status
+
+### ✅ Web (React + Vite + Module Federation)
+- Wire transfers feature is fully functional
+- Run `pnpm nx run wire-transfers:dev:web` and `pnpm nx run web-host:dev`
+- Access at http://localhost:4300/wire-transfers
+
+### 🚧 Native (React Native + Metro/Re.Pack)
+- Native development setup is **work in progress**
+- React Native Module Federation requires Metro bundler or Re.Pack
+- The current webpack config is a placeholder
+- For production, use `@react-native-community/cli-plugin-metro` or `@callstack/repack`

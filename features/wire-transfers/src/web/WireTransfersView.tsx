@@ -9,6 +9,9 @@ export default function WireTransfersView() {
   const { accounts, form, onSubmit, status, balanceLabel } = useWireTransfers();
   const { control, register, handleSubmit, formState: { errors, isSubmitting } } = form;
 
+  console.log('Form errors:', errors);
+  console.log('Form values:', form.watch());
+
   return (
     <Container maxWidth="sm" sx={{ py: 4 }}>
       <Typography variant="h5" sx={{ mb: 2 }}>Wire Transfers</Typography>

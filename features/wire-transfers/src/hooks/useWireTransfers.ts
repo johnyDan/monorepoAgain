@@ -25,14 +25,14 @@ export function useWireTransfers() {
       makePlatformCoreResolver<WireTransfersForm>({
         fromAccountId: [v.required('Select an account')],
         toRecipient: [v.required('Recipient is required')],
-        amount: [v.required('Amount is required'), v.minAmount(0.01), v.maxAmount(100000)]
+        amount: [v.minAmount(0.01, 'Amount must be at least $0.01'), v.maxAmount(100000)]
       }),
     []
   );
 
   const form = useForm<WireTransfersForm>({
     resolver,
-    defaultValues: { fromAccountId: '', toRecipient: '', amount: 0, memo: '' }
+    defaultValues: { fromAccountId: '', toRecipient: '', memo: '' }
   });
 
   async function onSubmit(values: WireTransfersForm) {
