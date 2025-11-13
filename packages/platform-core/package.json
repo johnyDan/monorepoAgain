@@ -9,6 +9,22 @@
     ".": {
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
+    },
+    "./utils/*": {
+      "import": "./dist/utils/*.js",
+      "types": "./dist/utils/*.d.ts"
+    },
+    "./api/*": {
+      "import": "./dist/api/*.js",
+      "types": "./dist/api/*.d.ts"
+    },
+    "./auth/*": {
+      "import": "./dist/auth/*.js",
+      "types": "./dist/auth/*.d.ts"
+    },
+    "./state/*": {
+      "import": "./dist/state/*.js",
+      "types": "./dist/state/*.d.ts"
     }
   },
   "sideEffects": false,

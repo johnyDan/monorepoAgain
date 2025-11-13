@@ -1,10 +1,9 @@
 import type { Resolver, FieldValues, FieldErrors } from 'react-hook-form';
-import { required, minAmount, maxAmount } from '@platform-core/utils/validators';
+import { required, minAmount, maxAmount } from '@platform-core';
 
 export type FieldValidator = (value: unknown, allValues?: Record<string, unknown>) => true | string;
 export type Schema = Record<string, FieldValidator[]>;
 
-// Compose platform-core validators into a react-hook-form resolver
 export function makePlatformCoreResolver<TFieldValues extends FieldValues>(
   schema: Schema
 ): Resolver<TFieldValues> {
@@ -30,7 +29,6 @@ export function makePlatformCoreResolver<TFieldValues extends FieldValues>(
   };
 }
 
-// Convenience wrappers around platform-core validators
 export const v = {
   required: (message?: string): FieldValidator => (val) => required(val, message),
   minAmount: (min?: number, message?: string): FieldValidator => (val) =>
