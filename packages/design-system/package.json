@@ -9,6 +9,18 @@
     ".": {
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
+    },
+    "./web/*": {
+      "import": "./dist/web/*.js",
+      "types": "./dist/web/*.d.ts"
+    },
+    "./native/*": {
+      "import": "./dist/native/*.js",
+      "types": "./dist/native/*.d.ts"
+    },
+    "./theme": {
+      "import": "./dist/theme/index.js",
+      "types": "./dist/theme/index.d.ts"
     }
   },
   "sideEffects": false,
